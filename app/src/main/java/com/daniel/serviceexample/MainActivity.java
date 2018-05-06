@@ -23,8 +23,7 @@ public class MainActivity extends Activity {
 
     public void startSimpleService(View view) {
         startService(new Intent(getBaseContext(), MainActivity.class));
-        MediaPlayer player = MediaPlayer.create(this, Settings.System.DEFAULT_NOTIFICATION_URI);
-        player.setLooping(true);
+        MediaPlayer player = MediaPlayer.create(this, R.raw.rr);
         player.setVolume(100,100);
         player.start();
     }
@@ -32,5 +31,18 @@ public class MainActivity extends Activity {
     public void stopSimpleService(View view) {
         stopService(new Intent(getBaseContext(), MainActivity.class));
        }
+
+       public void onDestroy(){
+        super.onDestroy();
+       }
+
+
+    public void onResume(){
+        super.onResume();
+    }
+
+    public void onPause(){
+        super.onPause();
+    }
 
 }
